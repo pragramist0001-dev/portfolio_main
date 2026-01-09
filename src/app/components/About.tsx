@@ -106,7 +106,7 @@ const certificates = {
       title: 'Python Backend Программирование',
       issuer: 'BEPO IT Academy',
       description: 'Освоил основы языка Python, принципы ООП и бэкенд-разработки. Создание масштабируемых серверных приложений.',
-      image: '/images/certifikat_1.jpg',
+      image: '/images/certifikat_1.png',
     },
     {
       title: 'Frontend React Курс',
@@ -118,7 +118,7 @@ const certificates = {
       title: 'Компьютерная Грамотность',
       issuer: 'Romay Company',
       description: 'Работал оператором ПК в компании Romay. Получил опыт работы с офисными программами, ведения документации и устранения технических неполадок.',
-      image: '/images/certifikat_2.jpg',
+      image: '/images/certifikat_2.png',
     },
   ],
   uz: [
@@ -126,7 +126,7 @@ const certificates = {
       title: 'Python Backend Dasturlash',
       issuer: 'BEPO IT Academy',
       description: 'Python dasturlash tili asoslari, OOP tushunchalari va backend dasturlash tamoyillarini o\'zlashtirdim. Masshtablashuvchan server ilovalarini yaratdim.',
-      image: '/images/certifikat_1.jpg',
+      image: '/images/certifikat_1.png',
     },
     {
       title: 'Frontend React Kursi',
@@ -138,7 +138,7 @@ const certificates = {
       title: 'Kompyuter Savodxonligi',
       issuer: 'Romay Company',
       description: 'Romay kompaniyasida kompyuter operatori sifatida faoliyat yuritdim. Ofis dasturlari, hujjatlar bilan ishlash va texnik nosozliklarni bartaraf etish bo\'yicha tajriba orttirdim.',
-      image: '/images/certifikat_2.jpg',
+      image: '/images/certifikat_2.png',
     },
   ],
 };
