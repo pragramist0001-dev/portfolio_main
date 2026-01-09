@@ -40,6 +40,7 @@ export const translations = {
             intro3: "I believe in continuous learning and sharing knowledge with the developer community. My goal is to build products that make a positive impact on people's lives.",
             skills: "Skills & Technologies",
             experience: "Experience",
+            certificates: "Certificates",
             subtitle: "Passionate developer with expertise in building modern web applications",
         },
         projects: {
@@ -122,6 +123,7 @@ export const translations = {
             intro3: "Я верю в непрерывное обучение и обмен знаниями с сообществом разработчиков.",
             skills: "Навыки и Технологии",
             experience: "Опыт работы",
+            certificates: "Сертификаты",
             subtitle: "Увлеченный разработчик с опытом создания современных веб-приложений",
         },
         projects: {
@@ -204,6 +206,7 @@ export const translations = {
             intro3: "Doimiy o'rganish va bilim almashishga ishonaman. Mening maqsadim - odamlar hayotiga ijobiy ta'sir ko'rsatadigan mahsulotlar yaratish.",
             skills: "Ko'nikmalar va Texnologiyalar",
             experience: "Ish tajribasi",
+            certificates: "Sertifikatlar",
             subtitle: "Zamonaviy veb-ilovalar yaratish bo'yicha tajribali dasturchi",
         },
         projects: {

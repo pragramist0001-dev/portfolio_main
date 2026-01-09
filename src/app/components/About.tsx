@@ -80,9 +80,73 @@ const experiences = {
   ],
 };
 
+const certificates = {
+  en: [
+    {
+      title: 'Python Backend Programming',
+      issuer: 'BEPO IT Academy',
+      description: 'Mastered Python programming language fundamentals, OOP concepts, and backend development principles. Built scalable server-side applications.',
+      image: '/images/certifikat_1.png',
+    },
+    {
+      title: 'Frontend React Course',
+      issuer: 'MohirDev Academy',
+      description: 'Specialized training in modern Frontend development with React.js. Learned state management, component lifecycle, and building interactive UIs.',
+      image: '/images/certifikat_3.jpg',
+    },
+    {
+      title: 'Computer Operations',
+      issuer: 'Romay Company',
+      description: 'Worked as a Computer Operator at Romay Company. Gained experience in office software, document management, and technical troubleshooting.',
+      image: '/images/certifikat_2.png',
+    },
+  ],
+  ru: [
+    {
+      title: 'Python Backend Программирование',
+      issuer: 'BEPO IT Academy',
+      description: 'Освоил основы языка Python, принципы ООП и бэкенд-разработки. Создание масштабируемых серверных приложений.',
+      image: '/images/certifikat_1.jpg',
+    },
+    {
+      title: 'Frontend React Курс',
+      issuer: 'MohirDev Academy',
+      description: 'Специализированное обучение современной Frontend-разработке на React.js. Изучение управления состоянием, жизненного цикла компонентов и UI.',
+      image: '/images/certifikat_3.jpg',
+    },
+    {
+      title: 'Компьютерная Грамотность',
+      issuer: 'Romay Company',
+      description: 'Работал оператором ПК в компании Romay. Получил опыт работы с офисными программами, ведения документации и устранения технических неполадок.',
+      image: '/images/certifikat_2.jpg',
+    },
+  ],
+  uz: [
+    {
+      title: 'Python Backend Dasturlash',
+      issuer: 'BEPO IT Academy',
+      description: 'Python dasturlash tili asoslari, OOP tushunchalari va backend dasturlash tamoyillarini o\'zlashtirdim. Masshtablashuvchan server ilovalarini yaratdim.',
+      image: '/images/certifikat_1.jpg',
+    },
+    {
+      title: 'Frontend React Kursi',
+      issuer: 'MohirDev Academy',
+      description: 'React.js yordamida zamonaviy Frontend dasturlash bo\'yicha maxsus o\'quv kursi. State boshqaruvi va interaktiv UI yaratishni o\'rgandim.',
+      image: '/images/certifikat_3.jpg',
+    },
+    {
+      title: 'Kompyuter Savodxonligi',
+      issuer: 'Romay Company',
+      description: 'Romay kompaniyasida kompyuter operatori sifatida faoliyat yuritdim. Ofis dasturlari, hujjatlar bilan ishlash va texnik nosozliklarni bartaraf etish bo\'yicha tajriba orttirdim.',
+      image: '/images/certifikat_2.jpg',
+    },
+  ],
+};
+
 export function About() {
   const { t, language } = useLanguage();
   const currentExperience = (experiences as any)[language] || experiences.en;
+  const currentCertificates = (certificates as any)[language] || certificates.en;
 
   return (
     <section className="py-16">
@@ -164,6 +228,43 @@ export function About() {
                 <p className="text-gray-600">
                   {exp.description}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <h3 className="text-3xl text-center mb-12">{t('about.certificates')}</h3>
+          <div className="space-y-12">
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            {currentCertificates.map((cert: any, index: number) => (
+              <div
+                key={index}
+                className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''
+                  }`}
+              >
+                <div className="w-full md:w-1/2">
+                  <div className="relative aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-lg border border-gray-100 group">
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1000'; // Fallback image
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="w-full md:w-1/2 space-y-4 text-left">
+                  <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                    {cert.issuer}
+                  </div>
+                  <h4 className="text-2xl font-bold">{cert.title}</h4>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    {cert.description}
+                  </p>
+                </div>
+
               </div>
             ))}
           </div>
