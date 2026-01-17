@@ -9,10 +9,16 @@ import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Toaster } from './components/ui/sonner';
+import { Loader } from './components/ui/loader';
+import { CursorFollower } from './components/ui/CursorFollower';
+import { ParallaxBackground } from './components/ui/ParallaxBackground';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 type View = 'home' | 'blog' | 'blogPost' | 'projects' | 'about' | 'contact';
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(false);
   const [currentView, setCurrentView] = useState<View>(() => {
     const savedView = localStorage.getItem('currentView');
     return (savedView as View) || 'home';
@@ -20,6 +26,14 @@ export default function App() {
   const [selectedPostId, setSelectedPostId] = useState<string | null>(() => {
     return localStorage.getItem('selectedPostId');
   });
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out-cubic',
+    });
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('currentView', currentView);
@@ -33,26 +47,42 @@ export default function App() {
     }
   }, [selectedPostId]);
 
-  const handleNavigate = (view: string) => {
+  const handleNavigate = async (view: string) => {
+    setIsLoading(true);
+    // Simulate loading delay for smooth transition
+    await new Promise(resolve => setTimeout(resolve, 800));
+
     setCurrentView(view as View);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsLoading(false);
   };
 
-  const handleSelectPost = (postId: string) => {
+  const handleSelectPost = async (postId: string) => {
+    setIsLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 800));
+
     setSelectedPostId(postId);
     setCurrentView('blogPost');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsLoading(false);
   };
 
-  const handleBackToBlog = () => {
+  const handleBackToBlog = async () => {
+    setIsLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 800));
+
     setCurrentView('blog');
     setSelectedPostId(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsLoading(false);
   };
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col cursor-none relative font-sans">
+        <ParallaxBackground />
+        <CursorFollower />
+        {isLoading && <Loader />}
         <Header currentView={currentView} onNavigate={handleNavigate} />
 
         <main className="flex-grow">

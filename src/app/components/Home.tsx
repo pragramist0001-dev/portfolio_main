@@ -20,8 +20,8 @@ export function Home({ onNavigate, onSelectPost }: HomeProps) {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl mb-6">{t('home.whyWork')}</h2>
           <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="p-6">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="p-6" data-aos="fade-up" data-aos-delay="0">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-zap">
                 <Zap className="text-blue-600" size={32} />
               </div>
               <h3 className="text-2xl mb-3">{t('home.features.fast.title')}</h3>
@@ -29,8 +29,8 @@ export function Home({ onNavigate, onSelectPost }: HomeProps) {
                 {t('home.features.fast.desc')}
               </p>
             </div>
-            <div className="p-6">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="p-6" data-aos="fade-up" data-aos-delay="100">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-ripple">
                 <Target className="text-purple-600" size={32} />
               </div>
               <h3 className="text-2xl mb-3">{t('home.features.detail.title')}</h3>
@@ -38,8 +38,8 @@ export function Home({ onNavigate, onSelectPost }: HomeProps) {
                 {t('home.features.detail.desc')}
               </p>
             </div>
-            <div className="p-6">
-              <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="p-6" data-aos="fade-up" data-aos-delay="200">
+              <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-rocket">
                 <Rocket className="text-pink-600" size={32} />
               </div>
               <h3 className="text-2xl mb-3">{t('home.features.modern.title')}</h3>

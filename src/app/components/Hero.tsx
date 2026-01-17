@@ -14,16 +14,31 @@ export function Hero({ onNavigate }: HeroProps) {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="inline-block px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm">
+            <div
+              data-aos="fade-down"
+              className="inline-block px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm"
+            >
               {t('hero.welcome')}
             </div>
-            <h1 className="text-4xl md:text-6xl">
+            <h1
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="text-4xl md:text-6xl"
+            >
               {t('hero.title')}
             </h1>
-            <p className="text-xl text-gray-600">
+            <p
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className="text-xl text-gray-600"
+            >
               {t('hero.subtitle')}
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="flex flex-wrap gap-4"
+            >
               <Button onClick={() => onNavigate('projects')} size="lg" className="cursor-pointer">
                 {t('hero.viewProjects')}
                 <ArrowRight className="ml-2" size={20} />
@@ -32,7 +47,11 @@ export function Hero({ onNavigate }: HeroProps) {
                 {t('hero.getInTouch')}
               </Button>
             </div>
-            <div className="flex gap-4 pt-4">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="400"
+              className="flex gap-4 pt-4"
+            >
               <a href="https://github.com/pragramist0001-dev" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white rounded-lg transition-colors">
                 <Github size={24} />
               </a>
@@ -44,16 +63,32 @@ export function Hero({ onNavigate }: HeroProps) {
               </a>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative" data-aos="zoom-in" data-aos-delay="500">
             <div className="relative overflow-hidden">
               <img
                 src="/images/hero_main.jpg"
                 alt="Developer workspace"
                 className="w-118 h-118 rounded-md object-cover"
               />
+
+              {/* Floating Code Symbols */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-10 left-10 text-4xl font-bold text-blue-600/30 animate-wiggle">
+                  {'</>'}
+                </div>
+                <div className="absolute top-1/4 right-10 text-3xl font-bold text-purple-600/30 animate-wiggle" style={{ animationDelay: '0.5s' }}>
+                  {'{}'}
+                </div>
+                <div className="absolute bottom-2/3 left-1/2 text-3xl font-bold text-pink-600/30 animate-wiggle" style={{ animationDelay: '1s' }}>
+                  {'()'}
+                </div>
+                <div className="absolute top-1/2 right-1/4 text-2xl font-bold text-orange-600/30 animate-wiggle" style={{ animationDelay: '1.5s' }}>
+                  {'[]'}
+                </div>
+              </div>
             </div>
-            <div className="absolute -bottom-16 right-36 w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full blur-3xl opacity-50"></div>
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full blur-3xl opacity-50"></div>
+            <div className="absolute -bottom-16 right-36 w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full blur-3xl opacity-50 animate-pulse"></div>
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full blur-3xl opacity-50 animate-pulse"></div>
           </div>
         </div>
       </div>

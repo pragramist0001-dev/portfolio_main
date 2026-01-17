@@ -23,8 +23,13 @@ export function Projects() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-          {currentProjects.map((project: any) => (
-            <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+          {currentProjects.map((project: any, index: number) => (
+            <Card
+              key={project.id}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+              className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
+            >
               <div className="aspect-video overflow-hidden">
                 <img
                   src={project.image}

@@ -1,6 +1,7 @@
 import { Code, Database, Layout, Server, Smartphone, Zap } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { useLanguage } from '../context/LanguageContext';
+import { motion } from 'framer-motion';
 
 const skills = [
   {
@@ -202,29 +203,38 @@ export function About() {
         <div className="mb-12">
           <h3 className="text-3xl text-center mb-8">{t('about.skills')}</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skill) => {
+            {skills.map((skill, index) => {
               const Icon = skill.icon;
               return (
-                <Card key={skill.category} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="p-2 bg-blue-100 rounded-lg">
-                        <Icon className="text-blue-600" size={24} />
+                <motion.div
+                  key={skill.category}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="hover:shadow-lg transition-shadow bg-white/50 backdrop-blur-sm h-full">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="p-2 bg-blue-100 rounded-lg animate-float">
+                          <Icon className="text-blue-600" size={24} />
+                        </div>
+                        <h4 className="text-xl">{skill.category}</h4>
                       </div>
-                      <h4 className="text-xl">{skill.category}</h4>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {skill.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-gray-100 rounded-full text-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                      <div className="flex flex-wrap gap-2">
+                        {skill.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1 bg-gray-100 rounded-full text-sm"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               );
             })}
           </div>

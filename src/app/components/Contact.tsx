@@ -6,6 +6,7 @@ import { Textarea } from './ui/textarea';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { useLanguage } from '../context/LanguageContext';
+import { Loader } from './ui/loader';
 
 export function Contact() {
   const { t } = useLanguage();
@@ -163,8 +164,14 @@ ${formData.message}
                     />
                   </div>
                   <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-                    <Send size={20} className="mr-2" />
-                    {isSubmitting ? 'Sending...' : t('contact.form.send')}
+                    {isSubmitting ? (
+                      <Loader variant="inline" />
+                    ) : (
+                      <>
+                        <Send size={20} className="mr-2" />
+                        {t('contact.form.send')}
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>
