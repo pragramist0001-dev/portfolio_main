@@ -72,6 +72,15 @@ const projectsEn: Project[] = [
         github: 'https://github.com/pragramist0001-dev',
         demo: 'https://example.com',
     },
+    {
+        id: '8',
+        title: 'Furniture E-Commerce Store',
+        description: 'Discover Our New Collection',
+        image: '/images/portfolio_8.png',
+        tags: ['HTML', 'CSS', 'JavaScript'],
+        github: 'https://github.com/pragramist0001-dev',
+        demo: 'fluffy-naiad-3f6df2.netlify.app',
+    }
 ];
 
 const projectsRu: Project[] = [
@@ -138,6 +147,15 @@ const projectsRu: Project[] = [
         github: 'https://github.com/pragramist0001-dev',
         demo: 'https://example.com',
     },
+    {
+        id: '8',
+        title: 'Furniture E-Commerce Store',
+        description: 'Discover Our New Collection',
+        image: '/images/portfolio_8.png',
+        tags: ['HTML', 'CSS', 'JavaScript'],
+        github: 'https://github.com/pragramist0001-dev',
+        demo: 'https://example.com',
+    }
 ];
 
 const projectsUz: Project[] = [
@@ -204,6 +222,15 @@ const projectsUz: Project[] = [
         github: 'https://github.com/pragramist0001-dev',
         demo: 'https://example.com',
     },
+    {
+        id: '8',
+        title: 'Furniture E-Commerce Store',
+        description: 'Discover Our New Collection',
+        image: '/images/portfolio_8.png',
+        tags: ['HTML', 'CSS', 'JavaScript'],
+        github: 'https://github.com/pragramist0001-dev',
+        demo: 'https://example.com',
+    }
 ];
 
 export const projects = {

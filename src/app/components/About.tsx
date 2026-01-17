@@ -86,7 +86,7 @@ const certificates = {
       title: 'Python Backend Programming',
       issuer: 'BEPO IT Academy',
       description: 'Mastered Python programming language fundamentals, OOP concepts, and backend development principles. Built scalable server-side applications.',
-      image: '/images/certifikat_1.png',
+      image: '/images/certifikat_1.jpg',
     },
     {
       title: 'Frontend React Course',
@@ -98,7 +98,13 @@ const certificates = {
       title: 'Computer Operations',
       issuer: 'Romay Company',
       description: 'Worked as a Computer Operator at Romay Company. Gained experience in office software, document management, and technical troubleshooting.',
-      image: '/images/certifikat_2.png',
+      image: '/images/certifikat_2.jpg',
+    },
+    {
+      title: 'Front-end & Freelance',
+      issuer: 'WebForte Academy',
+      description: 'Completed Front-end development course and learned Freelance strategies at WebForte Academy.',
+      image: '/images/certifikat_4.jpg',
     },
   ],
   ru: [
@@ -106,7 +112,7 @@ const certificates = {
       title: 'Python Backend Программирование',
       issuer: 'BEPO IT Academy',
       description: 'Освоил основы языка Python, принципы ООП и бэкенд-разработки. Создание масштабируемых серверных приложений.',
-      image: '/images/certifikat_1.png',
+      image: '/images/certifikat_1.jpg',
     },
     {
       title: 'Frontend React Курс',
@@ -118,7 +124,13 @@ const certificates = {
       title: 'Компьютерная Грамотность',
       issuer: 'Romay Company',
       description: 'Работал оператором ПК в компании Romay. Получил опыт работы с офисными программами, ведения документации и устранения технических неполадок.',
-      image: '/images/certifikat_2.png',
+      image: '/images/certifikat_2.jpg',
+    },
+    {
+      title: 'Front-end и Фриланс',
+      issuer: 'WebForte Academy',
+      description: 'Окончил курс Front-end разработки и изучил стратегии фриланса в академии WebForte.',
+      image: '/images/certifikat_4.jpg',
     },
   ],
   uz: [
@@ -126,7 +138,7 @@ const certificates = {
       title: 'Python Backend Dasturlash',
       issuer: 'BEPO IT Academy',
       description: 'Python dasturlash tili asoslari, OOP tushunchalari va backend dasturlash tamoyillarini o\'zlashtirdim. Masshtablashuvchan server ilovalarini yaratdim.',
-      image: '/images/certifikat_1.png',
+      image: '/images/certifikat_1.jpg',
     },
     {
       title: 'Frontend React Kursi',
@@ -138,7 +150,13 @@ const certificates = {
       title: 'Kompyuter Savodxonligi',
       issuer: 'Romay Company',
       description: 'Romay kompaniyasida kompyuter operatori sifatida faoliyat yuritdim. Ofis dasturlari, hujjatlar bilan ishlash va texnik nosozliklarni bartaraf etish bo\'yicha tajriba orttirdim.',
-      image: '/images/certifikat_2.png',
+      image: '/images/certifikat_2.jpg',
+    },
+    {
+      title: 'Front-end va Frilans',
+      issuer: 'WebForte Academy',
+      description: 'WebForte akademiyasida Front-end dasturlash kursini tamomladim va frilans strategiyalarini o\'rgandim.',
+      image: '/images/certifikat_4.jpg',
     },
   ],
 };

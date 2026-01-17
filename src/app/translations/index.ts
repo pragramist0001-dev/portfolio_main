@@ -60,6 +60,8 @@ export const translations = {
             form: {
                 name: "Name",
                 email: "Email",
+                phone: "Phone Number",
+                telegram: "Telegram",
                 subject: "Subject",
                 message: "Message",
                 send: "Send Message",
@@ -143,6 +145,8 @@ export const translations = {
             form: {
                 name: "Имя",
                 email: "Email",
+                phone: "Номер телефона",
+                telegram: "Telegram",
                 subject: "Тема",
                 message: "Сообщение",
                 send: "Отправить сообщение",
@@ -226,6 +230,8 @@ export const translations = {
             form: {
                 name: "Ism",
                 email: "Email",
+                phone: "Telefon raqami",
+                telegram: "Telegram",
                 subject: "Mavzu",
                 message: "Xabar",
                 send: "Xabar yuborish",

@@ -12,6 +12,8 @@ export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    telegram: '',
     message: '',
   });
 
@@ -28,7 +30,12 @@ export function Contact() {
 New Contact Form Submission
 
 Name: ${formData.name}
+
 Email: ${formData.email}
+
+Phone: ${formData.phone}
+
+Telegram: ${formData.telegram || 'Not provided'}
 
 Message:
 ${formData.message}
@@ -48,7 +55,7 @@ ${formData.message}
 
       if (response.ok) {
         toast.success(t('contact.form.success'));
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', telegram: '', message: '' });
       } else {
         toast.error('Failed to send message. Please try again.');
       }
@@ -108,6 +115,35 @@ ${formData.message}
                         onChange={handleChange}
                         required
                         placeholder="your.email@example.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="phone" className="block mb-2">
+                        {t('contact.form.phone')} *
+                      </label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        placeholder="+998 99 582 47 87"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="telegram" className="block mb-2">
+                        {t('contact.form.telegram')}
+                      </label>
+                      <Input
+                        id="telegram"
+                        name="telegram"
+                        value={formData.telegram}
+                        onChange={handleChange}
+                        placeholder="@username"
                       />
                     </div>
                   </div>

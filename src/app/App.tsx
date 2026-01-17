@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { Header } from './components/Header';
 import { Home } from './components/Home';
@@ -13,8 +13,25 @@ import { Toaster } from './components/ui/sonner';
 type View = 'home' | 'blog' | 'blogPost' | 'projects' | 'about' | 'contact';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<View>('home');
-  const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
+  const [currentView, setCurrentView] = useState<View>(() => {
+    const savedView = localStorage.getItem('currentView');
+    return (savedView as View) || 'home';
+  });
+  const [selectedPostId, setSelectedPostId] = useState<string | null>(() => {
+    return localStorage.getItem('selectedPostId');
+  });
+
+  useEffect(() => {
+    localStorage.setItem('currentView', currentView);
+  }, [currentView]);
+
+  useEffect(() => {
+    if (selectedPostId) {
+      localStorage.setItem('selectedPostId', selectedPostId);
+    } else {
+      localStorage.removeItem('selectedPostId');
+    }
+  }, [selectedPostId]);
 
   const handleNavigate = (view: string) => {
     setCurrentView(view as View);
