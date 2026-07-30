@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { ThemeProvider } from 'next-themes';
 import { LanguageProvider } from './context/LanguageContext';
 import { Header } from './components/Header';
 import { Home } from './components/Home';
@@ -78,9 +79,10 @@ export default function App() {
   };
 
   return (
-    <LanguageProvider>
-      <div className="min-h-screen flex flex-col cursor-none relative font-sans">
-        <ParallaxBackground />
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <LanguageProvider>
+        <div className="min-h-screen flex flex-col cursor-none relative font-sans transition-colors duration-300 dark:bg-gray-950 dark:text-gray-50 bg-white text-gray-900">
+          <ParallaxBackground />
         <CursorFollower />
         {isLoading && <Loader />}
         <Header currentView={currentView} onNavigate={handleNavigate} />
@@ -106,8 +108,9 @@ export default function App() {
         </main>
 
         <Footer onNavigate={handleNavigate} />
-        <Toaster />
-      </div>
-    </LanguageProvider>
+          <Toaster />
+        </div>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }

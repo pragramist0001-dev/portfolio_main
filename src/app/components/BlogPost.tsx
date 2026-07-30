@@ -40,7 +40,7 @@ export function BlogPost({ postId, onBack }: BlogPostProps) {
           </Badge>
           <h1 className="text-4xl md:text-5xl mb-6">{post.title}</h1>
 
-          <div className="flex flex-wrap gap-4 text-gray-600 mb-6">
+          <div className="flex flex-wrap gap-4 text-gray-600 dark:text-gray-400 mb-6">
             <div className="flex items-center gap-2">
               <User size={18} />
               <span>{post.author}</span>
@@ -69,12 +69,12 @@ export function BlogPost({ postId, onBack }: BlogPostProps) {
         </div>
 
         <div
-          className="prose prose-lg max-w-none mb-8"
+          className="prose prose-lg dark:prose-invert max-w-none mb-8 text-gray-800 dark:text-gray-300"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
-        <div className="flex flex-wrap gap-2 pt-6 border-t">
-          <span className="text-gray-600">Tags:</span>
+        <div className="flex flex-wrap gap-2 pt-6 border-t dark:border-gray-800">
+          <span className="text-gray-600 dark:text-gray-400">Tags:</span>
           {post.tags.map((tag) => (
             <Badge key={tag} variant="outline">
               {tag}

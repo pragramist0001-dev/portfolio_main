@@ -24,7 +24,7 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const TELEGRAM_BOT_TOKEN = '8133046089:AAHMluVHa4eFrMSfOaq1jIUVrWGGXSb06yc';
+    const TELEGRAM_BOT_TOKEN = '8701498072:AAEVp6GsQ7Az68KFpm_X3cu7vP6E8n93I8o';
     const TELEGRAM_CHAT_ID = '6687531628';
 
     const text = `
@@ -76,18 +76,18 @@ ${formData.message}
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 dark:bg-gray-950/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl mb-4">{t('contact.title')}</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {t('contact.subtitle')}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div className="lg:col-span-2">
-            <Card>
+            <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
               <CardContent className="p-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
@@ -179,15 +179,15 @@ ${formData.message}
           </div>
 
           <div className="space-y-6">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-100 rounded-lg">
-                    <Mail className="text-blue-600" size={24} />
+                  <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                    <Mail className="text-blue-600 dark:text-blue-400" size={24} />
                   </div>
                   <div>
                     <h4 className="mb-1">{t('contact.info.email')}</h4>
-                    <a href="mailto:pragramist0001@gmail.com" className="text-gray-600 hover:text-blue-600">
+                    <a href="mailto:pragramist0001@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
                       pragramist0001@gmail.com
                     </a>
                   </div>
@@ -195,15 +195,15 @@ ${formData.message}
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-green-100 rounded-lg">
-                    <Phone className="text-green-600" size={24} />
+                  <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                    <Phone className="text-green-600 dark:text-green-400" size={24} />
                   </div>
                   <div>
                     <h4 className="mb-1">{t('contact.info.phone')}</h4>
-                    <a href="tel:+998995824787" className="text-gray-600 hover:text-green-600">
+                    <a href="tel:+998995824787" className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400">
                       +998 99 582 47 87
                     </a>
                   </div>
@@ -211,15 +211,15 @@ ${formData.message}
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-purple-100 rounded-lg">
-                    <MapPin className="text-purple-600" size={24} />
+                  <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+                    <MapPin className="text-purple-600 dark:text-purple-400" size={24} />
                   </div>
                   <div>
                     <h4 className="mb-1">{t('contact.info.location')}</h4>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 dark:text-gray-400">
                       Termiz, Surxandaryo<br />
                       O'zbekiston
                     </p>

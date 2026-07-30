@@ -1,5 +1,6 @@
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 import { Button } from './ui/button';
 import {
   Select,
@@ -28,13 +29,20 @@ export function Header({ currentView, onNavigate }: HeaderProps) {
     { id: 'contact', label: t('header.contact') },
   ];
 
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleNavClick = (id: string) => {
     onNavigate(id);
     setMobileMenuOpen(false);
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
+    <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b dark:border-gray-800">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <button
@@ -74,6 +82,16 @@ export function Header({ currentView, onNavigate }: HeaderProps) {
                 <SelectItem value="uz">UZ</SelectItem>
               </SelectContent>
             </Select>
+            {mounted && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="rounded-full"
+              >
+                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+              </Button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -110,6 +128,24 @@ export function Header({ currentView, onNavigate }: HeaderProps) {
                 </SelectContent>
               </Select>
             </div>
+            {mounted && (
+              <div className="px-4 py-2">
+                <Button
+                  variant="outline"
+                  className="w-full justify-center"
+                  onClick={() => {
+                    setTheme(theme === 'dark' ? 'light' : 'dark');
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  {theme === 'dark' ? (
+                    <Sun size={20} />
+                  ) : (
+                    <Moon size={20} />
+                  )}
+                </Button>
+              </div>
+            )}
           </nav>
         )}
       </div>

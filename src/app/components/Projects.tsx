@@ -16,7 +16,7 @@ export function Projects() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl mb-4">{t('projects.title')}</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {t('projects.subtitle')}
           </p>
         </div>
@@ -28,7 +28,7 @@ export function Projects() {
               key={project.id}
               data-aos="fade-up"
               data-aos-delay={index * 100}
-              className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
+              className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800"
             >
               <div className="aspect-video overflow-hidden">
                 <img
@@ -41,7 +41,7 @@ export function Projects() {
                 <h3 className="text-2xl">{project.title}</h3>
               </CardHeader>
               <CardContent className="flex-grow">
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                   {project.tags.map((tag: any) => (

@@ -16,18 +16,18 @@ export function BlogList({ onSelectPost }: BlogListProps) {
   const currentPosts = (blogPosts as any)[language] || blogPosts.en;
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 dark:bg-gray-950/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl mb-4">{t('blog.title')}</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {t('blog.subtitle')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {currentPosts.map((post) => (
-            <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+            <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
               <div className="aspect-video overflow-hidden">
                 <img
                   src={post.image}
@@ -42,10 +42,10 @@ export function BlogList({ onSelectPost }: BlogListProps) {
                 <h3 className="text-2xl line-clamp-2">{post.title}</h3>
               </CardHeader>
               <CardContent className="flex-grow">
-                <p className="text-gray-600 line-clamp-3">{post.excerpt}</p>
+                <p className="text-gray-600 dark:text-gray-400 line-clamp-3">{post.excerpt}</p>
                 <div className="flex flex-wrap gap-2 mt-4">
                   {post.tags.map((tag) => (
-                    <div key={tag} className="flex items-center gap-1 text-sm text-gray-500">
+                    <div key={tag} className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
                       <Tag size={14} />
                       <span>{tag}</span>
                     </div>
@@ -53,7 +53,7 @@ export function BlogList({ onSelectPost }: BlogListProps) {
                 </div>
               </CardContent>
               <CardFooter className="flex flex-col gap-3">
-                <div className="flex items-center justify-between w-full text-sm text-gray-500">
+                <div className="flex items-center justify-between w-full text-sm text-gray-500 dark:text-gray-400">
                   <div className="flex items-center gap-1">
                     <Calendar size={16} />
                     <span>{new Date(post.date).toLocaleDateString()}</span>

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 interface FooterProps {
@@ -9,7 +9,7 @@ export function Footer({ onNavigate }: FooterProps) {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 dark:bg-gray-950 text-white py-12 border-t dark:border-gray-800">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -94,7 +94,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 <Github size={20} />
               </a>
               <a
-                href="https://www.linkedin.com/feed/"
+                href="https://www.linkedin.com/in/azizbek-jo-rayev-2b3779384"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors cursor-pointer"
@@ -102,12 +102,12 @@ export function Footer({ onNavigate }: FooterProps) {
                 <Linkedin size={20} />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://www.instagram.com/jorayevv.azizbek?igsh=bzEyM2ZwN2JzMXV2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors cursor-pointer"
               >
-                <Twitter size={20} />
+                <Instagram size={20} />
               </a>
               <a
                 href="mailto:pragramist0001@gmail.com"
