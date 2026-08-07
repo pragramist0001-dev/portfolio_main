@@ -26,7 +26,7 @@ export function BlogList({ onSelectPost }: BlogListProps) {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentPosts.map((post) => (
+          {currentPosts.map((post: any) => (
             <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
               <div className="aspect-video overflow-hidden">
                 <img
@@ -44,7 +44,7 @@ export function BlogList({ onSelectPost }: BlogListProps) {
               <CardContent className="flex-grow">
                 <p className="text-gray-600 dark:text-gray-400 line-clamp-3">{post.excerpt}</p>
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {post.tags.map((tag) => (
+                  {post.tags.map((tag: string) => (
                     <div key={tag} className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
                       <Tag size={14} />
                       <span>{tag}</span>
